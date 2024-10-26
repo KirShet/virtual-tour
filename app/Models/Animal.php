@@ -5,16 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cage extends Model
+class Animal extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'name',
-        'capacity',
+        'type',
+        'age',
+        'description',
+        'cade_id'
     ];
-    public function animals(){
-        return $this->hasMany(Animal::class);
-    }
 
+    public function cage(){
+        return $this->belongsTo(Cage::class);
+    }
 }
