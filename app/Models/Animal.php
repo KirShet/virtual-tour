@@ -10,8 +10,8 @@ class Animal extends Model
     use HasFactory;
 
     protected $fillable = [
+        'species',
         'name',
-        'type',
         'age',
         'description',
         'cade_id'

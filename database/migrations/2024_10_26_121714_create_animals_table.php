@@ -17,9 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->integer('age');
             $table->text('description');
-            $table->foreign('cage_id')
-            ->constrained('cages')
-            ->onDelete('cascade'); // Delete related cages when an animal is deleted
+            $table->foreignId('cage_id')->constrained('cages')->onDelete('cascade');
             $table->timestamps();
         });
     }
