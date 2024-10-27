@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CageController;
+use App\Http\Controllers\HomeController;
 
 Route::view('/', 'welcome');
 
@@ -16,3 +17,5 @@ Route::view('profile', 'profile')
 require __DIR__.'/auth.php';
 
 Route::resource('cages', CageController::class);
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
