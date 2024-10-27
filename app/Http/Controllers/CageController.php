@@ -9,7 +9,7 @@ class CageController extends Controller
 {
     public function index()
     {
-        $cages = Cage::all();
+        $cages = Cage::withCount('animals')->get(); 
         return view('cages.index', compact('cages'));
     }
 
