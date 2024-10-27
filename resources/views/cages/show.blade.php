@@ -1,3 +1,7 @@
-<div>
-    <!-- I begin to speak only when I am certain what I will say is not better left unsaid. - Cato the Younger -->
-</div>
+@extends('layouts.app')
+
+@section('content')
+    <h1>{{ $cage->name }}</h1>
+    <p>Capacity: {{ $cage->capacity }}</p>
+    <a href="{{ route('cages.index') }}">Go back</a>
+@endsection

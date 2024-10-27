@@ -1,3 +1,15 @@
-<div>
-    <!-- Simplicity is the consequence of refined emotions. - Jean D'Alembert -->
-</div>
+@extends('layouts.app')
+
+@section('content')
+    <h1>Add cage</h1>
+    <form action="{{ route('cages.store')}}" method="post">
+        @csrf
+        <label for="name">Name:</label>
+        <input type="text" name="name" required>
+
+        <label for="capacity">Capacity: </label>
+        <input type="number" name="capacity" required>
+
+        <button type="submit">Add Cage</button>
+    </form>
+@endsection
