@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $cage = Cage::with('animals')->get();
+        $cages = Cage::with('animals')->get();
 
         return view('home', compact('cages'));
     }
