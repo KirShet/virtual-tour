@@ -15,6 +15,23 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" ">
+            <a class="navbar-brand" href="{{ route('home') }}"> Virtual Tour </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('home') }}">Main page</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{{ route('cages.index') }}">Cages</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{{ route('cages.create') }}">Add cages</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
         <div class="min-h-screen bg-gray-100">
             <livewire:layout.navigation />
 
