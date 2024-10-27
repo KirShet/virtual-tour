@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>Cage</h1>
-    <a href="{{ route('cage.create') }}" class="btn btn-primary">Add cage</a>
+    <a href="{{ route('cages.create') }}" class="btn btn-primary">Add cage</a>
     @if(session("success"))
         <div class="alert alert-success">{{ session('success')}}</div>
     @endif

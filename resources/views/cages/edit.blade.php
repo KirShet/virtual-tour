@@ -1,8 +1,8 @@
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('content')
     <h1>Edit cage</h1>
-    <form action="{{ route('cage.update', $cage) }}" method="POST">
+    <form action="{{ route('cages.update', $cage) }}" method="POST">
         @csrf
         @method('PUT')
 
