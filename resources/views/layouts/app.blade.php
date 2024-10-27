@@ -31,7 +31,7 @@
                 </ul>
             </div>
         </nav>
-        
+
         <div class="min-h-screen bg-gray-100">
             <livewire:layout.navigation />
 
@@ -44,6 +44,16 @@
                 </header>
             @endif
 
+            !-- Alert Notifications -->
+            <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+                @if(session('error'))
+                    <div class="alert alert-danger">{{ session('error') }}</div>
+                @endif
+                @if(session('success'))
+                    <div class="alert alert-success">{{ session('success') }}</div>
+                @endif
+            </div>
+            
             <!-- Page Content -->
             <main>
                 {{ $slot }}
