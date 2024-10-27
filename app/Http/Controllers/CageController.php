@@ -41,12 +41,12 @@ class CageController extends Controller
 
     public function update(Request $request, Cage $cage)
     {
-        $validatedData = $request->validate([
+        $request->validate([
+            'capacity' => 'required|integer|min:'.$cage->animals()->count(),
             'name' => 'required|string|max:255',
-            'capacity' => 'required|integer|min:1',
         ]);
 
-        $cage->update($validatedData);
+        $cage->update($request->only('name', 'capacity'));
         return redirect()->route('cages.index')->with('success', 'Клетка успешно обновлена');
     }
 
