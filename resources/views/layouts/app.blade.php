@@ -44,7 +44,7 @@
                 </header>
             @endif
 
-            !-- Alert Notifications -->
+            <!-- Alert Notifications -->
             <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
                 @if(session('error'))
                     <div class="alert alert-danger">{{ session('error') }}</div>
@@ -56,7 +56,7 @@
             
             <!-- Page Content -->
             <main>
-                {{ $slot }}
+                @yield('content')
             </main>
         </div>
     </body>
