@@ -15,7 +15,7 @@ class AnimalController extends Controller
         return view('animal.create');
     }
 
-    public function store(StoreAnimalRequest $request)
+    public function store(AnimalRequest  $request)
     {
         $validatedData = $request->validated();
         $cage = Cage::findOrFail($validatedData['cage_id']);
