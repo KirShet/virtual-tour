@@ -7,6 +7,11 @@ use App\Http\Requests\StoreAnimalRequest;
 
 class AnimalController extends Controller
 {
+    public function create()
+    {
+        return view('animal.create');
+    }
+
     public function store(StoreAnimalRequest $request){
         $validatedData = $request->validated();
         $cage = Cage::findDrFail($request->cage-id);
@@ -19,5 +24,15 @@ class AnimalController extends Controller
         $cage->animal()->save($animal);
 
         return redirect()->route('animals.index')->with('succes', 'The beast was added succes')
+    }
+
+    public function show(Animal $animal)
+    {
+        return view('animal.show', compact('animal'));
+    }
+
+    public function edit(Animal $animal)
+    {
+        return view('animals.edit', compact('animal'));
     }
 }
