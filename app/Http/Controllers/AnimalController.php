@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreAnimalRequest;
+use App\Models\Animal;
+use App\Models\Cage;
 
 class AnimalController extends Controller
 {
