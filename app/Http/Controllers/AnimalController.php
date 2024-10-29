@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AnimalRequest;
-use Illuminate\Http\Request;
-use App\Http\Requests\StoreAnimalRequest;
 use App\Models\Animal;
 use App\Models\Cage;
 
@@ -48,17 +46,17 @@ class AnimalController extends Controller
             $newCage = Cage::findOrFail($validatedData['cage_id']);
 
             if (!$newCage->hasSpace()){
-                return redirect()->back()->withErrors([ 'cage' => 'There is no free space in the selected cell.' ])
+                return redirect()->back()->withErrors([ 'cage' => 'There is no free space in the selected cell.' ]);
             }
         }
         $animal->update($validatedData);
-        return redirect()->route('animal.show', $animal)->with('success', 'The beast was added succes')
+        return redirect()->route('animal.show', $animal)->with('success', 'The beast was added succes');
     }
 
     public function destroy(Animal $animal)
     {
         $animal->delete();
 
-        return redirect()->route('animals.index')->with('success', 'The animal has been removed')
+        return redirect()->route('animals.index')->with('success', 'The animal has been removed');
     }
 }
