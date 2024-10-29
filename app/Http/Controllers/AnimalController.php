@@ -15,16 +15,16 @@ class AnimalController extends Controller
     public function store(StoreAnimalRequest $request)
     {
         $validatedData = $request->validated();
-        $cage = Cage::findОrFail($validatedData['cage_id']);
+        $cage = Cage::findOrFail($validatedData['cage_id']);
 
         if(!$cage->hasSpace()) {
             return redirect()->back()->withErrors(['cage_id' => 'There is no free space in the selected cell.']);
         }
 
         $animal = new Animal($validatedData);
-        $cage->animal()->save($animal);
+        $cage->animals()->save($animal);
 
-        return redirect()->route('animals.index')->with('succes', 'The beast was added succes');
+        return redirect()->route('animals.index')->with('success', 'The beast was added succes');
     }
 
     public function show(Animal $animal)
