@@ -14,6 +14,15 @@ class Cage extends Model
         'capacity',
     ];
     
+    /**
+     * 
+     * @return
+     */
+    public function hasSpace()
+    {
+        return $this->animals()->count() < $this->capacity;
+    }
+
     public function animals(){
         return $this->hasMany(Animal::class);
     }
