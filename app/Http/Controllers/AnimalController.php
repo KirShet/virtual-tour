@@ -15,12 +15,7 @@ class AnimalController extends Controller
     }
     public function create()
     {
-        $cages = Cage::whereHas('animals', function($query) {
-            $query->select('cage_id')
-                  ->groupBy('cage_id')
-                  ->havingRaw('count(*) < cages.capacity');
-        })->get();
-
+        $cages = Cage::doesntHave('animals')->get();
         return view('animals.create', compact(var_name: 'cages'));
     }
 

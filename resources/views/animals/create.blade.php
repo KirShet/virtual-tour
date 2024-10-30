@@ -17,12 +17,14 @@
         <input type="text" name="description" required>
 
         <label for="cage_id">Select Cage:</label>
-        <Select name="cage_id" required>
+        <select name="cage_id" required>
             <option value="">Select a cage</option>
-
-                <option value=""></option>
-
-        </Select>
+            @foreach ($cages as $cage)
+                <option value="{{ $cage->id }}">{{ $cage->name }}</option>
+                {{ var_dump($cage)}}
+            @endforeach
+{{ var_dump($cages)}}
+        </select>
 
         <button type="submit">Add Animal</button>
     </form>
