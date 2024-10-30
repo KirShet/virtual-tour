@@ -23,6 +23,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth'])->group(function(){
     Route::resource('cages', CageController::class)->only(['create','store','destroy']);
-    Route::resource('animals', AnimalController::class)->only(['create', 'store', 'destroy']);
+    // Route::resource('animals', AnimalController::class)->only(['create', 'store', 'destroy']);
 });
 Route::get('cages/{cage}/edit', [CageController::class, 'edit'])->name('cages.edit')->middleware('auth');
+Route::get('animals', [AnimalController::class, 'index'])->name('animal.index')->middleware('auth');

@@ -3,7 +3,7 @@
 @section('content')
     <h1>List animals</h1>
     <a href="{{route('animals.create')}}">Add new beast</a>
-    @foreach ($animals as animal)
+    @foreach ($animals as $animal)
         <h2>{{ $animal->name }}</h2>
         <p><strong>Species:</strong>{{ $animal->species }}</p>
         <p><strong>Age:</strong>{{ $animal->age }}</p>
