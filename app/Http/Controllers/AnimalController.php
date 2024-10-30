@@ -11,11 +11,16 @@ class AnimalController extends Controller
     public function index()
     {
         $animals = Animal::with('cage')->get();
-        return view('animals.index', compact(var_name: 'animals'));
+        return view('animals.index', compact('animals'));
     }
     public function create()
     {
-        return view('animals.create');
+        $cage = Cage::whereHas('animals', function($query){
+            $query->selectRaw('count(*) as count')
+            ->groupBy('cage_id')
+            ->havingRaw('count(*) < cages.capacity');
+        })->get();
+        return view('animals.create', compact(var_name: 'cages'));
     }
 
     public function store(AnimalRequest  $request)
