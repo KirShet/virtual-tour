@@ -8,9 +8,14 @@ use App\Models\Cage;
 
 class AnimalController extends Controller
 {
+    public function index()
+    {
+        $animals = Animal::with('cage')->get();
+        return view('animals.index', compact(var_name: 'animals'));
+    }
     public function create()
     {
-        return view('animal.create');
+        return view('animals.create');
     }
 
     public function store(AnimalRequest  $request)
@@ -30,7 +35,7 @@ class AnimalController extends Controller
 
     public function show(Animal $animal)
     {
-        return view('animal.show', compact('animal'));
+        return view('animals.show', compact('animal'));
     }
 
     public function edit(Animal $animal)
@@ -50,7 +55,7 @@ class AnimalController extends Controller
             }
         }
         $animal->update($validatedData);
-        return redirect()->route('animal.show', $animal)->with('success', 'The beast was added succes');
+        return redirect()->route('animals.show', $animal)->with('success', 'The beast was added succes');
     }
 
     public function destroy(Animal $animal)
