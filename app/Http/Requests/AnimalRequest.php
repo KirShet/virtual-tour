@@ -11,7 +11,7 @@ class AnimalRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,7 +23,7 @@ class AnimalRequest extends FormRequest
     {
         $rules = [
             'species' => 'required|string|max:225',
-            'name' => 'required|string|max|225',
+            'name' => 'required|string|max:225',
             'age' => 'required|integer|min:0',
             'description' => 'nullable|string',
             'cage_id' => 'required|exists:cages,id'
