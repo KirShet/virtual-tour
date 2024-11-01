@@ -6,10 +6,10 @@
         <p>Age: {{ $animal->age }}</p>
         <p>Descriptions: {{ $animal->descriptions }}</p>
         <a href="{{ route('animals.index') }}">Go back</a>
-        <form action="">
-            @scrf
+        <form action="{{ route('animals.destroy', $animal) }}" method="POST">
+            @csrf
             @method('DELETE')
             <button type="submit">Удалить</button>
         </form>
-        <a href="{{ route('animals.update') }}"></a>
+        <a href="{{ route('animals.edit', $animal) }}"></a>
 @endsection
