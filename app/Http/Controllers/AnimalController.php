@@ -41,7 +41,8 @@ class AnimalController extends Controller
 
     public function edit(Animal $animal)
     {
-        return view('animals.edit', compact('animal'));
+        $cages = Cage::all();
+        return view('animals.edit', compact('animal', 'cages'));
     }
 
     public function update(AnimalRequest $request, Animal $animal)

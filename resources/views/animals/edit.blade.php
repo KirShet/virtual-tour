@@ -19,8 +19,15 @@
         <input type="text" name="description" value="{{ $animal->description }}" required>
 
         <label for="cage_id">Cage ID:</label>
-        <input type="number" name="cage_id" value="{{$animal->cage_id}}" required>
 
+        <select name="cage_id" required>
+            <option value="{{ $animal->cage_id }}">{{current(array_filter($cages->toArray(), fn($cage) => $cage['id'] == $animal->cage_id))['name']}}</option>
+            @foreach ($cages as $cage)
+                @if ($cage->id !== $animal->cage_id)
+                    <option value="{{ $cage->id }}">{{ $cage->name }}</option>
+                @endif
+            @endforeach
+        </select>
         <button type="submit">Update</button>
     </form>
 @endsection
