@@ -28,6 +28,12 @@
                     <li>
                         <a class="nav-link" href="{{ route('cages.create') }}">Add cages</a>
                     </li>
+                    <li>
+                        <a class="nav-link" href="{{ route('animals.index') }}">Animal</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{{ route('animals.create') }}">Add animal</a>
+                    </li>
                 </ul>
             </div>
         </nav>
