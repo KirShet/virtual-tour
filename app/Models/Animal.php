@@ -14,7 +14,7 @@ class Animal extends Model
         'name',
         'age',
         'description',
-        'cade_id'
+        'cage_id'
     ];
 
     public function cage(){
