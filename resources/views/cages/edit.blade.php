@@ -15,8 +15,8 @@
             </div>
 
             <div class="form-group">
-                <label for="species"><strong>capacity:</strong></label>
-                <input type="number" name="species" value="{{ $cage->capacity }}" required class="form-control">
+                <label for="capacity"><strong>capacity:</strong></label>
+                <input type="number" name="capacity" value="{{ $cage->capacity }}" required class="form-control">
             </div>
             <div class="mt-4 text-center">
                 <button type="submit" class="btn btn-danger btn-sm">Update</button>
