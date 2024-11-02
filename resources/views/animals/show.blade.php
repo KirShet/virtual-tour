@@ -11,13 +11,13 @@
                     <p><strong>Description:</strong> {{ $animal->description }}</p>
                     <div class="mt-2">
                         <a href="{{ route('animals.index') }}" class="text-orange-600 hover:underline" >Go back</a>
-                    </div>
                     <form action="{{ route('animals.destroy', $animal) }}" method="POST" class="d-inline ml-3">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm">Удалить</button>
                     </form>
                     <a href="{{ route('animals.edit', $animal) }}" class="ml-3 text-warning" >Edit</a>
+                    </div>
                 </div>
             </div>
         </div>
