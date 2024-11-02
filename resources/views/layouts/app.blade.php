@@ -17,7 +17,7 @@
     <body class="font-sans antialiased">
         <nav class="navbar navbar-expand-lg navbar-light bg-light" ">
             <a class="navbar-brand" href="{{ route('home') }}"> Virtual Tour </a>
-            <div class="collapse navbar-collapse">
+            <div class="navbar-collapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('home') }}">Main page</a>
