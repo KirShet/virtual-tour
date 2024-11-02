@@ -6,7 +6,7 @@
             <h1 class="h3 font-weight-bold mb-4 text-center">Add cage</h1>
             <div class="mt-4">
                 @auth
-                <form action="{{ route('cage.store') }}" method="POST" class="p-5 border border-secondary rounded shadow-sm mb-4">
+                <form action="{{ route('cages.store') }}" method="POST" class="p-5 border border-secondary rounded shadow-sm mb-4">
                     @csrf
                     <div class="form-group">
                         <label for="name"><strong>Name of the cell:</strong></label>
