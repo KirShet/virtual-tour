@@ -15,7 +15,9 @@ class AnimalController extends Controller
     }
     public function create()
     {
-        $cages = Cage::doesntHave('animals')->get();
+        $cages = Cage::all()->filter(function ($cage) {
+            return $cage->hasSpace();
+        });
         return view('animals.create', compact(var_name: 'cages'));
     }
 
